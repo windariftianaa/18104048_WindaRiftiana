@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Latihan jQuery</title>
+    </head>
+    <body>
+
+        <h1 id="hello">Hello World</h1><!-- Element yang akan dihilangkan-->
+
+        <p>Hello</p>
+
+        <input type="text" name="nama" id="teks">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#hello').on('click', function(){
+                    $(this).hide(); //syntax untuk membuat display:none pada elemen id hello
+                });
+
+                $('p').hover(function(){
+                    $(this).hide();
+                    //syntax untuk membuat display:none pada elemen p (paragraph)
+                });
+
+                $('#teks').focus(function() {
+                    $(this).css('width','500px');//syntax untuk mengganti properties lebar menjadi 500px pada elemen id teks      
+                });
+            });
+        </script>
+    </body>
+</html>

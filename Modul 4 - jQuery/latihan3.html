@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Latihan jQuery 3</title>
+    </head>
+    <body>
+        <label for="bil1">Bil1</label>
+        <input type="number" name="bil1" id="bil1"><!--Input bil1-->
+
+        <label for="bil2">Bil2</label>
+        <input type="number" name="bil2" id="bil2"><!--Input bil2-->
+        
+        <input type="button" value="Tambah" id="btnTambah"><!--tombol untuk menampilkan hasil-->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            //aksi pada saat tombol #btntambah diklik
+            $('#btnTambah').on('click', function(){
+                let bil1 = $('#bil1').val(); //mengisi variabel bil1 dengan nilai yang diisi pada element input id bil1
+                let bil2 = $('#bil2').val();
+                //mengisi variabel bil1 dengan nilai yang diisi pada element input id bil1
+                let hasil = parseInt(bil1) + parseInt(bil2); //mengisi variable hasil dengan nilai variabel bil1+bil2
+                alert('Hasil : ' + hasil);//menampilkan variabel hasil pada alert box
+            });
+        </script>
+    </body>
+</html>
