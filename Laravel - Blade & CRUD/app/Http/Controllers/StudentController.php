@@ -21,22 +21,31 @@ class StudentController extends Controller
     }
 
     public function store(Request $request){
-        $request->validate([
+        
+        $validateData = Validator::make($request->all(),[
             'nim' => 'required|size:8,unique:students',
             'name' => 'required|min:3|max:50',
             'gender' => 'required|in:P,L',
             'departement' => 'required',
             'address' => '',
         ]);
-    $student = new Student();
-    $student->nim = $request->nim;
-    $student->name = $request->name;
-    $student->gender = $request->gender;
-    $student->departement = $request->departement;
-    $student->address = $request->address;
-    $student->save();
 
-    return redirect(route('student.index'))->with('pesan','Data Berhasil Ditambahkan');
+        if($validateData->fails()){
+            return response($validateData->errors(),400);
+        }else{
+
+            $student = new Student();
+            $student->nim = $request->nim;
+            $student->name = $request->name;
+            $student->gender = $request->gender;
+            $student->departement = $request->departement;
+            $student->address = $request->address;
+            $student->save();
+            return response()->json([
+                message=>'student record created'
+            ],201);
+        }
+
     }
 
     public function edit($id){

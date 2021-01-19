@@ -20,6 +20,7 @@
                       <div class="navbar-nav">
                         <a class="nav-link active" href="{{route ('index') }}">Beranda <span class="sr-only">(current)</span></a>
                         <a class="nav-link" href="{{route ('student.index')}}">Mahasiswa</a>
+                        <a class="nav-link" href="{{route ('student.data')}}">DataTable</a>
                         <a class="nav-link" href="{{route ('about') }}">About</a>
                       </div>
                     </div>
@@ -40,6 +41,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
- 
+    @yield('script')
   </body>
 </html>
